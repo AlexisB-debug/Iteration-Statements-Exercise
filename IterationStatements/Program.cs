@@ -32,6 +32,25 @@
         //    - Returns true if the numbers are equal, false otherwise.
         public static bool AreNumbersEqual(int num1, int num2)
         {
+            Console.WriteLine("This method checks whether two integers are the same number or different numbers.");
+            Console.WriteLine("Please, enter the first integer");
+            var canParse = int.TryParse(Console.ReadLine(), out num1);
+
+            while (!canParse)
+            {
+                Console.WriteLine("Please, enter an integer");
+                canParse = int.TryParse(Console.ReadLine(), out num1);
+            }
+
+            Console.WriteLine("Please, enter the second integer");
+            var canParse2 = int.TryParse(Console.ReadLine(), out num2);
+
+            while (!canParse2)
+            {
+                Console.WriteLine("Please, enter an integer");
+                canParse2 = int.TryParse(Console.ReadLine(), out num2);
+            }
+
             switch (num1 == num2)
             {
             case true:
@@ -49,6 +68,15 @@
         //    - Returns true if the number is even, false if odd.
         public static bool IsEven(int number)
         {
+            Console.WriteLine("Please, enter a number to check whether it is even or odd.");
+            var canParse = int.TryParse(Console.ReadLine(), out number);
+            
+            while (!canParse)
+            {
+                Console.WriteLine("Please, enter an integer.");
+                canParse = int.TryParse(Console.ReadLine(), out number);
+            }
+
             switch (number % 2 == 0)
             {
                 case true:
@@ -65,6 +93,15 @@
         //    - Returns true if the number is positive, false if negative.
         public static bool IsPositive(int number)
         {
+            Console.WriteLine("This method checks whether an integer is positive or negative.\nPlease, enter an integer.");
+            var canParse = int.TryParse(Console.ReadLine(), out number);
+            
+            while (!canParse)
+            {
+                Console.WriteLine("Please, enter an integer.");
+                canParse = int.TryParse(Console.ReadLine(), out number);
+            }
+
             switch (number > 0)
             {
                 case true:
@@ -107,7 +144,7 @@
         //    - Returns true if the number is within the range, false otherwise.
         public static bool IsInRange(int number)
         {
-            Console.WriteLine("Please, enter an integer.");
+            Console.WriteLine("This method checks whether an integer is within the range of -10 to 10.\nPlease, enter an integer.");
             var canParse = int.TryParse(Console.ReadLine(), out number);
 
             while (!canParse)
@@ -131,6 +168,15 @@
         //    - Should print each line in the format: "1 * number = result"
         public static void DisplayMultiplicationTable(int number)
         {
+            Console.WriteLine("This method displays the multiplication table (from 1 to 12) for an integer.\nPlease, enter an integer.");
+            var canParse = int.TryParse(Console.ReadLine(), out number);
+            
+            while (!canParse)
+            {
+                Console.WriteLine("Please, enter an integer.");
+                canParse = int.TryParse(Console.ReadLine(), out number);
+            }
+
             int i = 1;
             while (i <= 12)
             {

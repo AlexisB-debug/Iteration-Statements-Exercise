@@ -105,25 +105,55 @@
         // 1. Write a method that checks if an integer (provided by the user) is within the range of -10 to 10.
         //    - Method Signature: bool IsInRange(int number)
         //    - Returns true if the number is within the range, false otherwise.
-        
+        public static bool IsInRange(int number)
+        {
+            Console.WriteLine("Please, enter an integer.");
+            var canParse = int.TryParse(Console.ReadLine(), out number);
+
+            while (!canParse)
+            {
+                Console.WriteLine("Please, enter an integer.");
+                canParse = int.TryParse(Console.ReadLine(), out number);
+            }
+
+            switch (number <= 10 && number >= -10)
+            {
+                case true:
+                    return true;
+                    break;
+                default:
+                    return false;
+                    break;
+            }
+        }
         // 2. Write a method that displays the multiplication table (from 1 to 12) for a given integer.
         //    - Method Signature: void DisplayMultiplicationTable(int number)
         //    - Should print each line in the format: "1 * number = result"
-
+        public static void DisplayMultiplicationTable(int number)
+        {
+            int i = 1;
+            while (i <= 12)
+            {
+                Console.WriteLine($"{i} x {number} = {i * number}");
+                i = i + 1;
+            }
+        }
         // In the Main method below, call each of your methods to test them.
         // Use various test cases to ensure they work as expected.        
         static void Main(string[] args)
         {
             //PrintNumbers();
-            PrintEveryThirdNumber();
+            //PrintEveryThirdNumber();
             //Console.WriteLine($"It is {AreNumbersEqual(3,7)} that the numbers are the same.");
             //Console.WriteLine($"It is {IsEven(7)} that the number is even.");
             //Console.WriteLine($"It is {IsPositive(-3)} that the number is positive.");
-            //The instructions required a boolean. 
+            //The instructions required the Method Signature: bool CanVote(int age) 
             //The program requires me to type some integer into the argument to call the method;
-            //That integer is not the candidate age which the program will run.
+            //Ignore that integer. That integer is not the candidate age which the program will run.
             //The program will run the integer which the user types.
             //Console.WriteLine($"It is {CanVote(17)} that the candidate is voting age!");
+            //Console.WriteLine($"It is {IsInRange(7)} that the number is within the range of -10 to 10");
+            //DisplayMultiplicationTable(7);
         }
     }
 }

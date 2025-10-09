@@ -8,7 +8,7 @@
             PrintEveryThirdNumber();
             //The instructions read:
             //"For training purposes, most if not all the data for these methods can come from user input."
-            //That is why I created seven do-while loops in the Main Method (I learned this I first submitted).
+            //That is why I created seven do-while loops in the Main Method (I learned this after I first submitted).
             Console.WriteLine("The method AreNumbersEqual checks whether two integers are the same number or different numbers.");
             
             bool num1IsAnInteger;
@@ -91,21 +91,17 @@
         }
         public static void PrintNumbers()
         {
-            int i = 1000;
-            while (i >= -1000)
+            for (int i = 1000; i >= -1000; i--)
             {
                 Console.WriteLine(i);
-                i = i - 1;
             }
         }
         
         public static void PrintEveryThirdNumber()
         {
-            int i = 3;
-            while (i <= 999)
+            for (int j = 3; j <= 999; j +=3)
             {
-                Console.WriteLine(i);
-                i = i + 3;
+                Console.WriteLine(j);
             }
         }
         
@@ -176,13 +172,10 @@
         
         public static void DisplayMultiplicationTable(int number)
         {
-            int i = 1;
-            while (i <= 12)
+            for (int k = 1; k <= 12; k++)
             {
-                Console.WriteLine($"{i} * {number} = {i * number}");
-                i = i + 1;
+                Console.WriteLine($"{k} * {number} = {k * number}");
             }
         }
-                
     }
 }

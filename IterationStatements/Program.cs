@@ -2,6 +2,93 @@
 {
     public class Program
     {
+        static void Main(string[] args)
+        {
+            PrintNumbers();
+            PrintEveryThirdNumber();
+            //The instructions read:
+            //"For training purposes, most if not all the data for these methods can come from user input."
+            //That is why I created seven do-while loops in the Main Method (I learned this I first submitted).
+            Console.WriteLine("The method AreNumbersEqual checks whether two integers are the same number or different numbers.");
+            
+            bool num1IsAnInteger;
+            int num1;
+            do
+            {
+                Console.WriteLine("Please, type the first integer:");
+                num1IsAnInteger = int.TryParse(Console.ReadLine(), out num1);
+            }while(!num1IsAnInteger);
+            
+            bool num2IsAnInteger;
+            int num2;
+            do
+            {
+                Console.WriteLine("Please, type the second integer:");
+                num2IsAnInteger = int.TryParse(Console.ReadLine(), out num2);
+            }while(!num2IsAnInteger);
+            
+            Console.WriteLine($"It is {AreNumbersEqual(num1,num2)} that the numbers are the same.");
+            
+            Console.WriteLine("The method IsEven checks whether a number is even or odd.");
+            
+            bool num3IsAnInteger;
+            int num3;
+            do
+            {
+                Console.WriteLine("Please, type the integer:");
+                num3IsAnInteger = int.TryParse(Console.ReadLine(), out num3);
+            }while(!num3IsAnInteger);
+            
+            Console.WriteLine($"It is {IsEven(num3)} that the number is even.");
+            
+            Console.WriteLine("The method IsPositive checks whether an integer is positive or negative.");
+            
+            bool num4IsAnInteger;
+            int num4;
+            do
+            {
+                Console.WriteLine("Please, type the integer:");
+                num4IsAnInteger = int.TryParse(Console.ReadLine(), out num4);
+            }while(!num4IsAnInteger);
+
+            Console.WriteLine($"It is {IsPositive(num4)} that the number is positive.");
+            
+            Console.WriteLine("The method CanVote checks whether a candidate is voting age.");
+            
+            bool num5IsAnInteger;
+            int num5;
+            do
+            {
+                Console.WriteLine("Please, tell me the number of your last birthday. Type an integer:");
+                num5IsAnInteger = int.TryParse(Console.ReadLine(), out num5);
+            }while(!num5IsAnInteger);
+            
+            Console.WriteLine($"It is {CanVote(num5)} that the candidate is voting age!");
+            
+            Console.WriteLine("The method IsInRange checks whether an integer is within the range of -10 to 10.");
+            
+            bool num6IsAnInteger;
+            int num6;
+            do
+            {
+                Console.WriteLine("Please, type the integer:");
+                num6IsAnInteger = int.TryParse(Console.ReadLine(), out num6);
+            }while(!num6IsAnInteger);
+
+            Console.WriteLine($"It is {IsInRange(num6)} that the number is within the range of -10 to 10");
+            
+            Console.WriteLine("The method DisplayMultiplicationTable displays the multiplication table (from 1 to 12) for an integer.");
+            
+            bool num7IsAnInteger;
+            int num7;
+            do
+            {
+                Console.WriteLine("Please, type the integer:");
+                num7IsAnInteger = int.TryParse(Console.ReadLine(), out num7);
+            }while(!num7IsAnInteger);
+
+            DisplayMultiplicationTable(num7);
+        }
         public static void PrintNumbers()
         {
             int i = 1000;
@@ -24,25 +111,6 @@
         
         public static bool AreNumbersEqual(int num1, int num2)
         {
-            Console.WriteLine("This method checks whether two integers are the same number or different numbers.");
-            Console.WriteLine("Please, enter the first integer");
-            var canParse = int.TryParse(Console.ReadLine(), out num1);
-
-            while (!canParse)
-            {
-                Console.WriteLine("Please, enter an integer");
-                canParse = int.TryParse(Console.ReadLine(), out num1);
-            }
-
-            Console.WriteLine("Please, enter the second integer");
-            var canParse2 = int.TryParse(Console.ReadLine(), out num2);
-
-            while (!canParse2)
-            {
-                Console.WriteLine("Please, enter an integer");
-                canParse2 = int.TryParse(Console.ReadLine(), out num2);
-            }
-
             switch (num1 == num2)
             {
             case true:
@@ -52,21 +120,11 @@
                 return false;
                 break;
             }
-
         }
         
-        public static bool IsEven(int number)
+        public static bool IsEven(int num3)
         {
-            Console.WriteLine("Please, enter a number to check whether it is even or odd.");
-            var canParse = int.TryParse(Console.ReadLine(), out number);
-            
-            while (!canParse)
-            {
-                Console.WriteLine("Please, enter an integer.");
-                canParse = int.TryParse(Console.ReadLine(), out number);
-            }
-
-            switch (number % 2 == 0)
+            switch (num3 % 2 == 0)
             {
                 case true:
                     return true;
@@ -79,15 +137,6 @@
         
         public static bool IsPositive(int number)
         {
-            Console.WriteLine("This method checks whether an integer is positive or negative.\nPlease, enter an integer.");
-            var canParse = int.TryParse(Console.ReadLine(), out number);
-            
-            while (!canParse)
-            {
-                Console.WriteLine("Please, enter an integer.");
-                canParse = int.TryParse(Console.ReadLine(), out number);
-            }
-
             switch (number > 0)
             {
                 case true:
@@ -101,15 +150,6 @@
         
         public static bool CanVote(int age)
         {
-            Console.WriteLine("Please, tell me the number of your last birthday. Enter an integer.");
-            var canParse = int.TryParse(Console.ReadLine(), out age);
-
-            while (!canParse)
-            {
-                Console.WriteLine("Please, enter an integer.");
-                canParse = int.TryParse(Console.ReadLine(), out age);
-            }
-
             switch (age >= 18)
             {
                 case true:
@@ -123,15 +163,6 @@
         
         public static bool IsInRange(int number)
         {
-            Console.WriteLine("This method checks whether an integer is within the range of -10 to 10.\nPlease, enter an integer.");
-            var canParse = int.TryParse(Console.ReadLine(), out number);
-
-            while (!canParse)
-            {
-                Console.WriteLine("Please, enter an integer.");
-                canParse = int.TryParse(Console.ReadLine(), out number);
-            }
-
             switch (number <= 10 && number >= -10)
             {
                 case true:
@@ -145,15 +176,6 @@
         
         public static void DisplayMultiplicationTable(int number)
         {
-            Console.WriteLine("This method displays the multiplication table (from 1 to 12) for an integer.\nPlease, enter an integer.");
-            var canParse = int.TryParse(Console.ReadLine(), out number);
-            
-            while (!canParse)
-            {
-                Console.WriteLine("Please, enter an integer.");
-                canParse = int.TryParse(Console.ReadLine(), out number);
-            }
-
             int i = 1;
             while (i <= 12)
             {
@@ -162,20 +184,5 @@
             }
         }
                 
-        static void Main(string[] args)
-        {
-            PrintNumbers();
-            PrintEveryThirdNumber();
-            //The instructions required the Method Signature: bool MethodName(parameters) for the methods below
-            //The program requires me to type some integer into the argument to call the method;
-            //Ignore that integer. That integer is not the user input.
-            //The program will run what the user types when prompted and not the argument.
-            Console.WriteLine($"It is {AreNumbersEqual(3,7)} that the numbers are the same.");
-            Console.WriteLine($"It is {IsEven(7)} that the number is even.");
-            Console.WriteLine($"It is {IsPositive(-3)} that the number is positive.");
-            Console.WriteLine($"It is {CanVote(17)} that the candidate is voting age!");
-            Console.WriteLine($"It is {IsInRange(7)} that the number is within the range of -10 to 10");
-            DisplayMultiplicationTable(7);
-        }
     }
 }

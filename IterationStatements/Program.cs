@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("The method PrintNumbers prints integers 1000 through -1000 inclusive.");
             PrintNumbers();
+            Console.WriteLine("The method PrintEveryThirdNumber counts by threes printing the integers 3 to 999 inclusive.");
             PrintEveryThirdNumber();
             //The instructions read:
             //"For training purposes, most if not all the data for these methods can come from user input."
@@ -111,10 +113,8 @@
             {
             case true:
                 return true;
-                break;
             default:
                 return false;
-                break;
             }
         }
         
@@ -124,10 +124,8 @@
             {
                 case true:
                     return true;
-                    break;
                 default:
                     return false;
-                    break;
             }
         }
         
@@ -137,10 +135,8 @@
             {
                 case true:
                     return true;
-                    break;
                 default:
                     return false;
-                    break;
             }
         }
         
@@ -150,10 +146,8 @@
             {
                 case true:
                     return true;
-                    break;
                 default:
                     return false;
-                    break;
             }
         }
         
@@ -163,10 +157,8 @@
             {
                 case true:
                     return true;
-                    break;
                 default:
                     return false;
-                    break;
             }
         }
         
